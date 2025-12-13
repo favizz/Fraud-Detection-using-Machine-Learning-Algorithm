@@ -1,6 +1,6 @@
 # Tugas Besar 2 IF3070 – Implementasi Algoritma Machine Learning
 
-## 📌 Deskripsi
+## Deskripsi
 Repository ini berisi implementasi **algoritma Machine Learning from scratch** untuk menyelesaikan permasalahan **klasifikasi fraud** sesuai dengan spesifikasi **Tugas Besar 2 IF3070 Dasar Inteligensi Artifisial**.
 
 Algoritma yang diimplementasikan meliputi:
@@ -56,7 +56,7 @@ Tahapan preprocessing yang dilakukan meliputi:
 
 ---
 
-## 📊 Evaluasi Model
+## Evaluasi Model
 Evaluasi performa model dilakukan menggunakan metrik:
 - Accuracy
 - Precision
@@ -78,7 +78,6 @@ Evaluasi dilakukan pada data validasi serta melalui **Kaggle submission**.
 
 ```bash
 git clone https://github.com/IlllIllIIIlIlIll/Fraud-Detection-using-Machine-Learning-Algorithm.git
-
 ```
 
 ## 👥 Tim Pengembang - Welfarella (Kelompok 31)
@@ -89,4 +88,3 @@ git clone https://github.com/IlllIllIIIlIlIll/Fraud-Detection-using-Machine-Lear
 | 18223008 | Henrycus Hugatama Risaldy | Feature engineering, dimensionality reduction, dan implementasi algoritma logistic regression from scratch |
 | 18223046 | Farella Kamala Budianto | Split training, validation, and testing set, handling missing data, exploratory data analysis, dan implementasi algoritma K-Nearest Neighbors from scratch |
 | 18223098 | Kenlyn Tesalonika Winata | Dealing with outliers, remove duplicates, handling imbalance dataset, dan implementasi algoritma DTL from scratch |
-
