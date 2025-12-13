@@ -68,11 +68,6 @@ Evaluasi dilakukan pada data validasi serta melalui **Kaggle submission**.
 
 ---
 
-## Penyimpanan Model
-- Model dapat disimpan (save) dan dimuat kembali (load)
-- Format penyimpanan model: .csv
-
----
 
 ## Cara Menjalankan Program
 
