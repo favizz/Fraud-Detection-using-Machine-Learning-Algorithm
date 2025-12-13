@@ -78,15 +78,6 @@ Evaluasi dilakukan pada data validasi serta melalui **Kaggle submission**.
 
 ```bash
 git clone https://github.com/IlllIllIIIlIlIll/Fraud-Detection-using-Machine-Learning-Algorithm.git
-pip install -r requirements.txt
-cd Traienta_IF3070/src/public
-
-
-### 1. Clone Repository
-```bash
-git clone ISI_SENDIRI_LINK_REPOSITORY
-cd ISI_SENDIRI_NAMA_FOLDER
-https://github.com/IlllIllIIIlIlIll/Fraud-Detection-using-Machine-Learning-Algorithm.git
 
 ```
 
