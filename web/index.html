@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fraud Detection Demo — Client-Side ML</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <span class="badge">No backend</span>
+        <span class="badge">Runs 100% in your browser</span>
+      </div>
+      <h1>Fraud Detection — Live Demo</h1>
+      <p>
+        Decision Tree (C4.5) and Logistic Regression models, implemented from scratch in numpy
+        and trained on the transaction dataset, running as plain JavaScript in this page.
+        Nothing you enter here is sent anywhere.
+      </p>
+    </header>
+
+    <div id="metrics-row" class="metrics-row"></div>
+
+    <div class="toolbar">
+      <button id="btn-sample">🎲 Load random sample</button>
+      <button id="btn-clear">Clear form</button>
+      <span id="sample-tag" class="sample-tag"></span>
+      <div class="model-picker" style="margin-left:auto">
+        <label><input type="radio" name="model" value="both" checked /><span>Both</span></label>
+        <label><input type="radio" name="model" value="logreg" /><span>Logistic Regression</span></label>
+        <label><input type="radio" name="model" value="dtl" /><span>Decision Tree</span></label>
+      </div>
+    </div>
+
+    <p class="hint">Tip: leave "Transaction amount", "Avg. transaction amount" or "Device trust score" blank to see how the pipeline imputes missing values, just like in the real dataset.</p>
+
+    <div id="form-groups" class="form-groups"></div>
+
+    <div class="predict-bar">
+      <button id="btn-predict" class="primary">Predict</button>
+    </div>
+
+    <div id="results" class="results"></div>
+
+    <footer>
+      Preprocessing (imputation, feature engineering, outlier clipping, encoding, scaling) and
+      model weights were exported from the training notebook via
+      <code>scripts/export_model.py</code> into <code>web/data/*.json</code> and re-implemented
+      here in <code>preprocess.js</code> — no server, no API calls, static hosting only.
+    </footer>
+  </div>
+
+  <script src="preprocess.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "logreg": {
+    "accuracy": 0.5869793489674484,
+    "precision": 0.18033172567933184,
+    "recall": 0.5426548672566371,
+    "f1": 0.2707045735475896
+  },
+  "dtl": {
+    "accuracy": 0.5743287164358218,
+    "precision": 0.17437600183192123,
+    "recall": 0.5391150442477876,
+    "f1": 0.2635176053291807
+  },
+  "logreg_threshold": 0.5,
+  "dtl_threshold": 0.14,
+  "dtl_nodes": 287,
+  "dtl_hyperparams": {
+    "max_depth": 10,
+    "min_samples": 200,
+    "min_samples_leaf": 50
+  },
+  "logreg_hyperparams": {
+    "learning_rate": 0.01,
+    "n_iterations": 3000,
+    "lambda_reg": 0.05
+  },
+  "n_train_rows": 100000,
+  "fraud_prevalence": 0.14128
+}
