@@ -7,7 +7,7 @@ function buildFeatureVector(rawInput, pipeline) {
   const numVals = {};
   for (const c of pipeline.num_cols) {
     const raw = rawInput[c];
-    let v = (raw === null || raw === undefined || raw === "") ? null : Number(raw);
+    let v = (raw === null || raw === undefined || raw === "") ? null : Number(String(raw).trim().replace(",", "."));
     if (v === null || Number.isNaN(v)) v = pipeline.impute_medians[c];
     numVals[c] = v;
   }

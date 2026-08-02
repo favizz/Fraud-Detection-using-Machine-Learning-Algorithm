@@ -3,52 +3,54 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Fraud Detection Demo — Client-Side ML</title>
+  <title>Fraud Risk Checker</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div>
-        <span class="badge">No backend</span>
-        <span class="badge">Runs 100% in your browser</span>
-      </div>
-      <h1>Fraud Detection — Live Demo</h1>
+      <h1>Fraud Risk Checker</h1>
       <p>
-        Decision Tree (C4.5) and Logistic Regression models, implemented from scratch in numpy
-        and trained on the transaction dataset, running as plain JavaScript in this page.
-        Nothing you enter here is sent anywhere.
+        As a fraud analyst, you review transactions like this all day and have seconds to decide
+        whether to approve, hold, or escalate one. This tool gives you a fast second opinion from
+        two independent risk models, so you're not relying on a single score to make that call.
+        Everything runs on your own device: nothing you enter is uploaded, stored, or shared.
       </p>
     </header>
 
     <div id="metrics-row" class="metrics-row"></div>
 
     <div class="toolbar">
-      <button id="btn-sample">🎲 Load random sample</button>
+      <button id="btn-sample">Load a sample transaction</button>
       <button id="btn-clear">Clear form</button>
       <span id="sample-tag" class="sample-tag"></span>
-      <div class="model-picker" style="margin-left:auto">
+      <div class="model-picker">
         <label><input type="radio" name="model" value="both" checked /><span>Both</span></label>
-        <label><input type="radio" name="model" value="logreg" /><span>Logistic Regression</span></label>
-        <label><input type="radio" name="model" value="dtl" /><span>Decision Tree</span></label>
+        <label><input type="radio" name="model" value="logreg" /><span>Model A</span></label>
+        <label><input type="radio" name="model" value="dtl" /><span>Model B</span></label>
       </div>
     </div>
 
-    <p class="hint">Tip: leave "Transaction amount", "Avg. transaction amount" or "Device trust score" blank to see how the pipeline imputes missing values, just like in the real dataset.</p>
+    <p class="hint">Fill in what you know about the transaction. Tap the <strong>!</strong> next to any field if you're not sure what it means. Everything else (account history, device trust, risk scores) is filled in automatically under "More detail" below, the way your system would already have it on file.</p>
 
-    <div id="form-groups" class="form-groups"></div>
+    <fieldset>
+      <legend>Transaction details</legend>
+      <div id="primary-fields"></div>
+    </fieldset>
+
+    <details id="advanced-details">
+      <summary>More detail <span class="hint-inline">(optional, filled in automatically)</span></summary>
+      <div id="advanced-groups"></div>
+    </details>
 
     <div class="predict-bar">
-      <button id="btn-predict" class="primary">Predict</button>
+      <button id="btn-predict" class="primary">Check this transaction</button>
     </div>
 
     <div id="results" class="results"></div>
 
     <footer>
-      Preprocessing (imputation, feature engineering, outlier clipping, encoding, scaling) and
-      model weights were exported from the training notebook via
-      <code>scripts/export_model.py</code> into <code>web/data/*.json</code> and re-implemented
-      here in <code>preprocess.js</code> — no server, no API calls, static hosting only.
+      Model A and Model B were each trained on the same historical transactions and score independently, so agreement between them is a stronger signal than either one alone.
     </footer>
   </div>
 
